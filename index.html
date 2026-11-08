@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="warm-bright">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>LISSO – Free Online Focus Timer, To-Do List & Study Workspace</title>
+  <meta name="description" content="Free online focus timer with rain, brown noise and binaural beats, plus a to-do list, planner and streak tracker. Pomodoro-style sprints. No sign-up.">
+  
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#F7F5F0">
+  <link rel="canonical" href="https://lisso.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LISSO">
+  <meta property="og:title" content="LISSO – Free Online Focus Timer, To-Do List & Study Workspace">
+  <meta property="og:description" content="Free online focus timer with rain, brown noise and binaural beats, plus a to-do list, planner and streak tracker. Pomodoro-style sprints. No sign-up.">
+  <meta property="og:url" content="https://lisso.vercel.app/">
+  <meta property="og:image" content="https://lisso.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LISSO – Free Online Focus Timer, To-Do List & Study Workspace">
+  <meta name="twitter:description" content="Free online focus timer with rain, brown noise and binaural beats, plus a to-do list, planner and streak tracker. Pomodoro-style sprints. No sign-up.">
+  <meta name="twitter:image" content="https://lisso.vercel.app/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LISSO",
+    "url": "https://lisso.vercel.app/",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web",
+    "description": "Free productivity workspace with prioritized tasks, project milestones, a focus timer with ambient sounds, a planner and meeting rooms.",
+    "featureList": ["Online focus timer (25-minute Pomodoro-style sprints)", "Rain sounds, brown noise, pink noise and binaural beats", "To-do list with priorities and deadlines", "Project planner and monthly calendar", "Daily streak and 28-day heatmap", "Meeting rooms"],
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "creator": {"@type": "Organization", "name": "Think Sprint", "url": "https://thinksprint.in"}
+  }
+  </script>
+
+  <!-- Lisso Vector Favicon (Generated from Brand Emblem) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2318191B'/%3E%3Cpath d='M50 8 C64 8 88 32 88 50 C88 68 64 92 50 92 C36 92 12 68 12 50 C12 32 36 8 50 8 Z' fill='%236C5CE7' opacity='0.15'/%3E%3Cg fill='%23FFFFFF'%3E%3Cpath d='M50 10 C62 10 76 22 84 36 C74 40 62 43 53 45 C47 46 45 48 45 49 C45 41 42 26 38 16 C42 12 46 10 50 10 Z'/%3E%3Cpath d='M90 50 C90 62 78 76 64 84 C60 74 57 62 55 53 C54 47 52 45 51 45 C59 45 74 42 84 38 C88 42 90 46 90 50 Z'/%3E%3Cpath d='M50 90 C38 90 24 78 16 64 C26 60 38 57 47 55 C53 54 55 52 55 51 C55 59 58 74 62 84 C58 88 54 90 50 90 Z'/%3E%3Cpath d='M10 50 C10 38 22 24 36 16 C40 26 43 38 45 47 C46 53 48 55 49 55 C41 55 26 58 16 62 C12 58 10 54 10 50 Z'/%3E%3C/g%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       01. WARM BRIGHT DESIGN SYSTEM & MINIMALIST TOKENS
+       ========================================================================== */
+    :root {
+      /* Warm Alabaster / Linen Foundations */
+      --bg-main: #F7F5F0;
+      --bg-surface: #FFFFFF;
+      --bg-surface-translucent: rgba(255, 255, 255, 0.78);
+      --bg-card: rgba(255, 255, 255, 0.88);
+      --bg-card-hover: rgba(255, 255, 255, 0.98);
+      
+      --text-main: #1D1E22;
+      --text-secondary: #656773;
+      --text-muted: #9598A4;
+
+      /* Warm Iris & Terracotta Accents */
+      --primary-accent: #6C5CE7;
+      --primary-accent-hover: #5A49E0;
+      --secondary-accent: #9D8CFF;
+      --warm-amber: #E89D52;
+      --warm-clay: #D97742;
+      --accent-soft: rgba(108, 92, 231, 0.08);
+      --accent-glow: rgba(108, 92, 231, 0.22);
+      --warm-glow: rgba(232, 157, 82, 0.16);
+
+      --success-green: #48BB78;
+      --borders: #EAE6DE;
+      --borders-hover: #D5D0C5;
+
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --radius-full: 9999px;
+
+      --shadow-subtle: 0 2px 10px rgba(29, 30, 34, 0.03), 0 1px 3px rgba(29, 30, 34, 0.02);
+      --shadow-card: 0 10px 30px rgba(29, 30, 34, 0.04), 0 2px 8px rgba(29, 30, 34, 0.02);
+      --shadow-hover: 0 22px 50px rgba(108, 92, 231, 0.08), 0 6px 18px rgba(29, 30, 34, 0.04);
+
+      --font-main: 'Inter', -apple-system, sans-serif;
+      --font-heading: 'Manrope', -apple-system, sans-serif;
+      --font-display: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Custom Cursor Replacement for Fine Pointer Devices */
+    @media (hover: hover) and (pointer: fine) {
+      body, a, button, input, textarea {
+        cursor: none !important;
+      }
+    }
+
+    /* ==========================================================================
+       02. DUAL-LAYER CUSTOM CURSOR & AMBIENT WARMTH
+       ========================================================================== */
+    .custom-cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary-accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999999;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 12px var(--primary-accent);
+      transition: width 0.15s, height 0.15s, background-color 0.15s, opacity 0.2s;
+    }
+
+    .custom-cursor-follower {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid var(--primary-accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999998;
+      transform: translate(-50%, -50%);
+      opacity: 0.55;
+      background: radial-gradient(circle, var(--accent-soft) 25%, transparent 80%);
+      transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                  height 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                  border-color 0.2s, background-color 0.2s, opacity 0.2s;
+    }
+
+    body.cursor-hover .custom-cursor-dot {
+      width: 4px;
+      height: 4px;
+      background-color: #FFFFFF;
+    }
+
+    body.cursor-hover .custom-cursor-follower {
+      width: 56px;
+      height: 56px;
+      background-color: var(--accent-soft);
+      border-color: var(--secondary-accent);
+      opacity: 0.85;
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .custom-cursor-dot, .custom-cursor-follower { display: none !important; }
+      body, a, button { cursor: auto !important; }
+    }
+
+    /* Ambient Warmth Glows (Floating Background Light) */
+    .ambient-background-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--warm-glow) 0%, rgba(108, 92, 231, 0.08) 45%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.65;
+      transform: translate(-50%, -50%);
+      will-change: left, top;
+      transition: opacity 0.4s ease;
+    }
+
+    .bg-subtle-grain {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(29, 30, 34, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(29, 30, 34, 0.015) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ==========================================================================
+       03. NAVIGATION BAR
+       ========================================================================== */
+    .landing-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--bg-surface-translucent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--borders);
+      transition: border-color var(--transition-normal);
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+    .nav-container .brand-lockup { justify-self: start; }
+    .nav-container .nav-cta-cluster { justify-self: end; }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-symbol-icon {
+      width: 36px;
+      height: 36px;
+      color: #18191B;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.06));
+      transition: transform 0.5s var(--transition-bounce);
+    }
+    .brand-lockup:hover .brand-symbol-icon {
+      transform: rotate(45deg) scale(1.08);
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.28rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link-item {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .nav-link-item:hover {
+      color: var(--text-main);
+    }
+
+    .nav-cta-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-minimal-ghost {
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid var(--borders);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-minimal-ghost:hover {
+      color: var(--text-main);
+      border-color: var(--borders-hover);
+      background: rgba(255, 255, 255, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .btn-warm-primary {
+      padding: 9px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background: var(--text-main);
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(29, 30, 34, 0.12);
+      transition: all var(--transition-fast);
+    }
+    .btn-warm-primary:hover {
+      background: var(--primary-accent);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    /* ==========================================================================
+       04. HERO SECTION (MINIMALIST & AESTHETIC)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      z-index: 10;
+      padding: 90px 24px 70px;
+      max-width: 1240px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .aesthetic-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--borders);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-subtle);
+      animation: floatPill 3.4s ease-in-out infinite alternate;
+    }
+    @keyframes floatPill {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-3px); }
+    }
+
+    .hero-heading {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      color: var(--text-main);
+      max-width: 880px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-heading span.gradient-warm {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, var(--warm-clay) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtext {
+      font-size: 1.12rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .hero-buttons-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    /* ==========================================================================
+       05. 3D PERSPECTIVE HERO SHOWCASE CARD
+       ========================================================================== */
+    .hero-3d-stage {
+      max-width: 1060px;
+      margin: 0 auto;
+      perspective: 1500px;
+    }
+
+    .hero-showcase-board {
+      background: var(--bg-card);
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(12px);
+      transform-style: preserve-3d;
+      transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .card-specular-shine {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle 280px at var(--mouse-x, -300px) var(--mouse-y, -300px), rgba(108, 92, 231, 0.08), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      border-radius: inherit;
+    }
+    .hero-showcase-board:hover .card-specular-shine,
+    .aesthetic-tilt-card:hover .card-specular-shine {
+      opacity: 1;
+    }
+
+    .mockup-header-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--borders);
+      padding-bottom: 16px;
+      margin-bottom: 22px;
+    }
+
+    .mockup-controls-dots {
+      display: flex;
+      gap: 7px;
+    }
+    .m-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--borders-hover);
+    }
+
+    .mockup-dual-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 20px;
+    }
+
+    .mockup-inner-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .mock-visualizer-canvas {
+      width: 100%;
+      height: 75px;
+      background: #FAF8F5;
+      border-radius: 8px;
+      border: 1px solid var(--borders);
+    }
+
+    /* ==========================================================================
+       06. PHILOSOPHY & THE 3 ESSENTIAL QUESTIONS
+       ========================================================================== */
+    .section-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 90px 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-header-centered {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 56px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .three-questions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .question-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-xl);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-subtle);
+      transition: all var(--transition-normal);
+    }
+    .question-box:hover {
+      border-color: var(--primary-accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .q-number {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      margin-bottom: 12px;
+    }
+
+    .q-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .q-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       07. THE 5 CORE PILLARS (3D TILT CARDS)
+       ========================================================================== */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .aesthetic-tilt-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-xl);
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform-style: preserve-3d;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .aesthetic-tilt-card:hover {
+      border-color: var(--primary-accent);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .pillar-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--accent-soft);
+      color: var(--primary-accent);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    .pillar-name {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .pillar-desc {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       08. FEATURE EXPERIENCES & AUDIO PREVIEW
+       ========================================================================== */
+    .feature-experience-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .feature-experience-box.reversed {
+      direction: rtl;
+    }
+    .feature-experience-box.reversed > * {
+      direction: ltr;
+    }
+
+    .exp-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .exp-desc {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .exp-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .exp-check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    .exp-check-icon {
+      color: var(--primary-accent);
+      font-weight: 700;
+    }
+
+    .preview-demo-card {
+      background: #FAF8F5;
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    /* ==========================================================================
+       09. CREATED BY — THINK SPRINT SPOTLIGHT
+       ========================================================================== */
+    .creator-section {
+      border-top: 1px solid var(--borders);
+      border-bottom: 1px solid var(--borders);
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .creator-card-spotlight {
+      background: var(--bg-surface);
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-xl);
+      padding: 50px 44px;
+      box-shadow: var(--shadow-card);
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .studio-crest-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 26px;
+      background: #FAF8F5;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--borders);
+    }
+
+    .studio-emblem {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--text-main), var(--primary-accent));
+      display: grid;
+      place-items: center;
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      margin-bottom: 14px;
+    }
+
+    .studio-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .studio-domain {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--primary-accent);
+      margin-top: 2px;
+    }
+
+    .creator-bio h4 {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .creator-bio p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.68;
+      margin-bottom: 16px;
+    }
+
+    /* ==========================================================================
+       10. CALL TO ACTION & MINIMALIST FOOTER
+       ========================================================================== */
+    .cta-warm-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, rgba(247, 245, 240, 0.9) 100%);
+      border: 1px solid var(--borders);
+      border-radius: var(--radius-xl);
+      padding: 60px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      margin-top: 20px;
+    }
+
+    .cta-heading {
+      font-family: var(--font-heading);
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .footer-section {
+      padding: 44px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .studio-link {
+      color: var(--text-main);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Scroll Reveal Classes */
+
+    /* FAQ */
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--bg-card); border: 1px solid var(--borders); border-radius: var(--radius-lg); padding: 18px 22px; box-shadow: var(--shadow-subtle); }
+    .faq-item summary { cursor: pointer; font-family: var(--font-heading); font-weight: 700; font-size: 1.02rem; color: var(--text-main); list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; float: right; color: var(--primary-accent); font-weight: 700; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { margin-top: 10px; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 960px) {
+      .hero-heading { font-size: 2.8rem; }
+      .mockup-dual-grid { grid-template-columns: 1fr; }
+      .three-questions-grid { grid-template-columns: 1fr; }
+      .feature-experience-box { grid-template-columns: 1fr; gap: 30px; padding: 32px 24px; }
+      .feature-experience-box.reversed { direction: ltr; }
+      .creator-card-spotlight { grid-template-columns: 1fr; text-align: center; gap: 28px; }
+      .nav-links { display: none; }
+      .nav-container { display: flex; justify-content: space-between; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is LISSO a free online focus timer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. LISSO is completely free to use in your browser. There is no account, no sign-up and no subscription. Open the workspace, start the focus timer and begin working."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use LISSO as a Pomodoro timer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LISSO has a countdown focus timer that starts at 25 minutes, the classic Pomodoro length, and lets you add 1, 5, 15 or 25 minutes as you go. Use it for Pomodoro-style focus sprints and take your own breaks between them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does LISSO have brown noise, rain sounds and binaural beats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Focus Room generates rain, brown noise, pink noise and binaural beats directly in your browser, so there is nothing to download. Many people use brown noise for studying, reading and deep work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free to-do list with priorities and no sign-up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Add tasks to your to-do list, give each one a High, Medium or Low priority and a deadline, and LISSO sorts them for you. You can also group tasks into projects with milestones and see them on a monthly calendar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your tasks, notes and streaks are saved locally in your browser, not on a server, and LISSO has no tracking and no AI assistant reading your work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is LISSO for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Students who need a study timer and planner, freelancers who want a simple task manager, and small teams who want quick meeting rooms without installing anything."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Ambient Light & Soft Grid Texture -->
+  <div class="ambient-background-glow" id="ambientGlow"></div>
+  <div class="bg-subtle-grain"></div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-follower" id="cursorFollower"></div>
+
+  <!-- Header Navigation -->
+  <header class="landing-header">
+    <div class="nav-container">
+      <a href="#" class="brand-lockup">
+        <!-- Brand Emblem matching the Favicon -->
+        <svg class="brand-symbol-icon" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 10 C62 10 76 22 84 36 C74 40 62 43 53 45 C47 46 45 48 45 49 C45 41 42 26 38 16 C42 12 46 10 50 10 Z"/>
+          <path d="M90 50 C90 62 78 76 64 84 C60 74 57 62 55 53 C54 47 52 45 51 45 C59 45 74 42 84 38 C88 42 90 46 90 50 Z"/>
+          <path d="M50 90 C38 90 24 78 16 64 C26 60 38 57 47 55 C53 54 55 52 55 51 C55 59 58 74 62 84 C58 88 54 90 50 90 Z"/>
+          <path d="M10 50 C10 38 22 24 36 16 C40 26 43 38 45 47 C46 53 48 55 49 55 C41 55 26 58 16 62 C12 58 10 54 10 50 Z"/>
+        </svg>
+        <div>
+          <span class="brand-title">LISSO</span>
+          <div class="brand-subtitle-tag">Workspace</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#objectives" class="nav-link-item">Objective</a></li>
+        <li><a href="#pillars" class="nav-link-item">5 Pillars</a></li>
+        <li><a href="#experience" class="nav-link-item">Experience</a></li>
+        <li><a href="#creator" class="nav-link-item">Think Sprint</a></li>
+      </ul>
+
+      <div class="nav-cta-cluster">
+        <a href="https://thinksprint.in" target="_blank" rel="noopener noreferrer" class="btn-minimal-ghost">
+          <span>Studio</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+        <a href="app.html" class="btn-warm-primary">
+          <span>Launch Workspace</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="aesthetic-tag-pill">
+      <span>●</span>
+      <span>Aesthetic Simplicity • 100% Client-Side Privacy • Zero AI Hype</span>
+    </div>
+
+    <h1 class="hero-heading">
+      Your workspace. Your productivity.<br>
+      <span class="gradient-warm">Tasks, focus timer & meetings, calm and unified.</span>
+    </h1>
+
+    <p class="hero-subtext">
+      LISSO is a free online focus timer, to-do list and study workspace in one calm place. Run 25-minute focus sprints with rain, brown noise or binaural beats, sort tasks by priority, plan projects on a calendar, and track your daily streak. No sign-up, and everything stays in your browser.
+    </p>
+
+    <div class="hero-buttons-row">
+      <a href="app.html" class="btn-warm-primary" style="padding:12px 28px; font-size:0.92rem;">
+        <span>Open LISSO Workspace</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#objectives" class="btn-minimal-ghost" style="padding:12px 24px; font-size:0.92rem;">
+        <span>Explore Philosophy</span>
+      </a>
+    </div>
+
+    <!-- 3D Perspective Hero Card (Reacts with mouse) -->
+    <div class="hero-3d-stage">
+      <div class="hero-showcase-board aesthetic-tilt-card" id="heroTiltMockup">
+        <div class="card-specular-shine"></div>
+        <div class="mockup-header-line">
+          <div class="mockup-controls-dots">
+            <span class="m-dot"></span>
+            <span class="m-dot"></span>
+            <span class="m-dot"></span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">LISSO KERNEL • CALM FLOW</span>
+          <span style="font-size:0.72rem; font-weight:600; color:var(--primary-accent); background:var(--accent-soft); padding:3px 10px; border-radius:var(--radius-full);">Zen State Active</span>
+        </div>
+
+        <div class="mockup-dual-grid">
+          <!-- Left: Focus Room Mini Audio Preview -->
+          <div class="mockup-inner-panel">
+            <span style="font-size:0.72rem; font-family:var(--font-mono); color:var(--text-muted); text-transform:uppercase;">Focus Room // Generative Acoustics</span>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <h4 style="font-size:1.05rem; color:var(--text-main);">Deep Focus Sprint</h4>
+                <p style="font-size:0.78rem; color:var(--text-secondary);">48kHz Rain & 350Hz Brown Noise</p>
+              </div>
+              <div style="font-family:var(--font-mono); font-size:1.5rem; font-weight:700; color:var(--primary-accent);">25:00</div>
+            </div>
+            <!-- Interactive Live Audio Waveform Canvas -->
+            <canvas class="mock-visualizer-canvas" id="heroWaveCanvas"></canvas>
+            <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted);">
+              <span>Acoustic Wave: Warm Resonance</span>
+              <span>Volume: 65%</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Priority Checklist -->
+          <div class="mockup-inner-panel">
+            <span style="font-size:0.72rem; font-family:var(--font-mono); color:var(--text-muted); text-transform:uppercase;">Priority Stream // Auto-Sorted</span>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; align-items:center; gap:8px; padding:8px 10px; background:#FAF8F5; border-radius:8px; font-size:0.84rem;">
+                <span style="color:var(--success-green); font-weight:700;">✓</span>
+                <span style="text-decoration:line-through; color:var(--text-muted);">Finalize warm token hierarchy</span>
+                <span style="margin-left:auto; font-size:0.62rem; font-weight:700; background:rgba(222,119,119,0.15); color:var(--error-red); padding:2px 6px; border-radius:4px;">HIGH</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; padding:8px 10px; background:#FFFFFF; border-radius:8px; border:1px solid var(--borders); font-size:0.84rem;">
+                <span style="color:var(--primary-accent);">●</span>
+                <span style="font-weight:600; color:var(--text-main);">Generate 10-digit meeting room</span>
+                <span style="margin-left:auto; font-size:0.62rem; font-weight:700; background:rgba(231,166,90,0.15); color:var(--warm-clay); padding:2px 6px; border-radius:4px;">MED</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; padding:8px 10px; background:#FAF8F5; border-radius:8px; font-size:0.84rem;">
+                <span style="color:var(--text-muted);">○</span>
+                <span style="color:var(--text-secondary);">Verify 28-day telemetry streak</span>
+                <span style="margin-left:auto; font-size:0.62rem; font-weight:700; background:rgba(105,185,144,0.15); color:var(--success-green); padding:2px 6px; border-radius:4px;">LOW</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objective & 3 Essential Questions Section -->
+  <section class="section-container" id="objectives">
+    <div class="section-header-centered reveal-on-scroll">
+      <div class="section-eyebrow">The Core Objective</div>
+      <h2 class="section-title">Answering the Three Daily Questions of Real Work</h2>
+      <p style="color:var(--text-secondary); margin-top:12px; font-size:1rem;">
+        LISSO was conceived to counter the modern fragmentation of tools. Instead of scattering your thoughts across five browser tabs, LISSO provides instant, calm clarity.
+      </p>
+    </div>
+
+    <div class="three-questions-grid">
+      <div class="question-box reveal-on-scroll">
+        <div class="q-number">01</div>
+        <h3 class="q-title">What do I need to do?</h3>
+        <p class="q-desc">
+          Capture deliverables and auto-sort them strictly by priority (High, Medium, Low). Every item is bound to milestones and deadlines, eliminating hollow backlogs.
+        </p>
+      </div>
+
+      <div class="question-box reveal-on-scroll">
+        <div class="q-number">02</div>
+        <h3 class="q-title">What am I working on?</h3>
+        <p class="q-desc">
+          Lock into the full-width Focus Room. Pair an aesthetic OLED countdown clock with customizable synthesized soundscapes (Rain, Brown Noise, Binaural Beats) to sustain flow.
+        </p>
+      </div>
+
+      <div class="question-box reveal-on-scroll">
+        <div class="q-number">03</div>
+        <h3 class="q-title">How much progress made?</h3>
+        <p class="q-desc">
+          Zero invented numbers. Monitor your true consecutive daily streak and a graduated 28-day activity heatmap calculated strictly from completed tasks saved directly in your browser.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Core Pillars Section -->
+  <section class="section-container" id="pillars">
+    <div class="section-header-centered reveal-on-scroll">
+      <div class="section-eyebrow">Product Architecture</div>
+      <h2 class="section-title">The Five Core Pillars of LISSO</h2>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="aesthetic-tilt-card reveal-on-scroll">
+        <div class="card-specular-shine"></div>
+        <div class="pillar-icon-wrap">🗂️</div>
+        <div>
+          <h3 class="pillar-name">1. Organisation</h3>
+          <p class="pillar-desc">
+            Structured projects requiring descriptions and initial tasks to maintain purposeful, deliverable-oriented backlogs.
+          </p>
+        </div>
+      </div>
+
+      <div class="aesthetic-tilt-card reveal-on-scroll">
+        <div class="card-specular-shine"></div>
+        <div class="pillar-icon-wrap">📈</div>
+        <div>
+          <h3 class="pillar-name">2. Productivity</h3>
+          <p class="pillar-desc">
+            Continuous streak telemetry and a 28-day graduated heatmap based entirely on deterministic recorded actions.
+          </p>
+        </div>
+      </div>
+
+      <div class="aesthetic-tilt-card reveal-on-scroll">
+        <div class="card-specular-shine"></div>
+        <div class="pillar-icon-wrap">📅</div>
+        <div>
+          <h3 class="pillar-name">3. Planning</h3>
+          <p class="pillar-desc">
+            An interactive monthly scheduling grid that maps task deadlines to clear dates without timezone slippage.
+          </p>
+        </div>
+      </div>
+
+      <div class="aesthetic-tilt-card reveal-on-scroll">
+        <div class="card-specular-shine"></div>
+        <div class="pillar-icon-wrap">🤝</div>
+        <div>
+          <h3 class="pillar-name">4. Management</h3>
+          <p class="pillar-desc">
+            Real-time meeting rooms with 10-digit ID codes, host deletion security, collapsible live side chat, and local AV feeds.
+          </p>
+        </div>
+      </div>
+
+      <div class="aesthetic-tilt-card reveal-on-scroll">
+        <div class="card-specular-shine"></div>
+        <div class="pillar-icon-wrap">✨</div>
+        <div>
+          <h3 class="pillar-name">5. Clarity</h3>
+          <p class="pillar-desc">
+            Minimalist layout, warm linen textures, and zero automated artificial assistants to restore personal agency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Feature Experiences Section -->
+  <section class="section-container" id="experience">
+    <div class="section-header-centered reveal-on-scroll">
+      <div class="section-eyebrow">Interactive Capabilities</div>
+      <h2 class="section-title">Built for Students, Freelancers & Teams</h2>
+    </div>
+
+    <!-- Feature Row 1: Focus Room & Acoustics -->
+    <div class="feature-experience-box reveal-on-scroll">
+      <div>
+        <h3 class="exp-title">Focus Timer with Rain & Brown Noise</h3>
+        <p class="exp-desc">
+          A distraction-free study timer for deep work. Start a 25-minute Pomodoro-style focus sprint, switch on Zen Mode to hide everything but the clock, and layer rain sounds, brown noise or binaural beats for studying, reading, coding and ADHD-friendly focus.
+        </p>
+        <ul class="exp-checklist">
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> Rain sounds for focus and studying (48kHz bandpass rain)</li>
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> Brown noise and pink noise generator for concentration</li>
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> Binaural beats (6Hz theta) with true stereo panning</li>
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> Custom YouTube link & local audio file streaming</li>
+        </ul>
+      </div>
+      <div class="preview-demo-card">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--primary-accent); margin-bottom:10px;">CLIENT-SIDE AUDIO SYNTHESIS PREVIEW</div>
+        <canvas id="experienceAudioCanvas" style="width:100%; height:90px; background:#FFFFFF; border-radius:8px; border:1px solid var(--borders);"></canvas>
+        <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center;">
+          <button class="btn-minimal-ghost" id="playAudioDemoBtn" onclick="toggleAcousticDemo()">
+            <span id="audioDemoBtnLabel">▶ Listen to Generative Rain</span>
+          </button>
+          <span style="font-size:0.72rem; color:var(--text-muted);">Web Audio API</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Row 2: Real-time Meetings -->
+    <div class="feature-experience-box reversed reveal-on-scroll">
+      <div>
+        <h3 class="exp-title">Free Online Meeting Rooms</h3>
+        <p class="exp-desc">
+          Collaborate without cloud lock-in. Generate an instant 10-digit numeric ID to jump into an audio/video space with local hardware control and interactive chat.
+        </p>
+        <ul class="exp-checklist">
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> 10-Digit numeric room ID generation and copy-link</li>
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> Live side-by-side meeting text chat with collapse toggle</li>
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> Direct microphone mute & camera pause toggles</li>
+          <li class="exp-check-item"><span class="exp-check-icon">✓</span> Host-only room deletion to prevent external tampering</li>
+        </ul>
+      </div>
+      <div class="preview-demo-card" style="text-align:center;">
+        <div style="background:#FFFFFF; border:1px solid var(--borders); padding:24px; border-radius:12px;">
+          <div style="font-family:var(--font-mono); font-size:1.6rem; font-weight:800; color:var(--text-main); letter-spacing:0.06em; margin-bottom:6px;">
+            4891-028-374
+          </div>
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:14px;">Instant Peer Room Channel</p>
+          <div style="display:inline-flex; gap:8px;">
+            <span class="btn-minimal-ghost" style="font-size:0.75rem;">🎤 Audio Ready</span>
+            <span class="btn-minimal-ghost" style="font-size:0.75rem;">📷 Video Active</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Created By: Think Sprint Spotlight -->
+
+  <!-- FAQ (search-focused) -->
+  <section class="section-container" id="faq">
+    <div class="section-header-centered reveal-on-scroll">
+      <div class="section-eyebrow">Questions</div>
+      <h2 class="section-title">Free Focus Timer &amp; To-Do List: FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal-on-scroll">
+        <summary>Is LISSO a free online focus timer?</summary>
+        <p>Yes. LISSO is completely free to use in your browser. There is no account, no sign-up and no subscription. Open the workspace, start the focus timer and begin working.</p>
+      </details>
+      <details class="faq-item reveal-on-scroll">
+        <summary>Can I use LISSO as a Pomodoro timer?</summary>
+        <p>LISSO has a countdown focus timer that starts at 25 minutes, the classic Pomodoro length, and lets you add 1, 5, 15 or 25 minutes as you go. Use it for Pomodoro-style focus sprints and take your own breaks between them.</p>
+      </details>
+      <details class="faq-item reveal-on-scroll">
+        <summary>Does LISSO have brown noise, rain sounds and binaural beats?</summary>
+        <p>Yes. The Focus Room generates rain, brown noise, pink noise and binaural beats directly in your browser, so there is nothing to download. Many people use brown noise for studying, reading and deep work.</p>
+      </details>
+      <details class="faq-item reveal-on-scroll">
+        <summary>Is there a free to-do list with priorities and no sign-up?</summary>
+        <p>Yes. Add tasks to your to-do list, give each one a High, Medium or Low priority and a deadline, and LISSO sorts them for you. You can also group tasks into projects with milestones and see them on a monthly calendar.</p>
+      </details>
+      <details class="faq-item reveal-on-scroll">
+        <summary>Is my data private?</summary>
+        <p>Yes. Your tasks, notes and streaks are saved locally in your browser, not on a server, and LISSO has no tracking and no AI assistant reading your work.</p>
+      </details>
+      <details class="faq-item reveal-on-scroll">
+        <summary>Who is LISSO for?</summary>
+        <p>Students who need a study timer and planner, freelancers who want a simple task manager, and small teams who want quick meeting rooms without installing anything.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section-container creator-section" id="creator">
+    <div class="section-header-centered reveal-on-scroll">
+      <div class="section-eyebrow">Studio Profile</div>
+      <h2 class="section-title">Designed & Developed by Think Sprint</h2>
+    </div>
+
+    <div class="creator-card-spotlight aesthetic-tilt-card reveal-on-scroll">
+      <div class="card-specular-shine"></div>
+      <div class="studio-crest-box">
+        <div class="studio-emblem">TS</div>
+        <div class="studio-name">Think Sprint</div>
+        <div class="studio-domain">thinksprint.in</div>
+        <a href="https://thinksprint.in" target="_blank" rel="noopener noreferrer" class="btn-minimal-ghost" style="margin-top:14px; font-size:0.78rem; width:100%; justify-content:center;">
+          Visit Official Studio
+        </a>
+      </div>
+
+      <div class="creator-bio">
+        <h4>Crafting Software for Human Clarity</h4>
+        <p>
+          <strong>Think Sprint</strong> is an elite engineering and design studio dedicated to building high-performance, aesthetically refined digital products that respect user focus, privacy, and time.
+        </p>
+        <p>
+          LISSO was created as an antidote to bloated modern software. By anchoring every function to local in-browser storage and eliminating all automated artificial noise, Think Sprint provides a tool that feels fast, predictable, and exceptionally dependable.
+        </p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; font-size:0.78rem; color:var(--primary-accent); font-family:var(--font-mono); font-weight:600;">
+          <span>// Zero-AI Architecture</span>
+          <span>// 100% Client-Side Privacy</span>
+          <span>// Minimalist Mastery</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Call to Action -->
+    <div class="cta-warm-card reveal-on-scroll">
+      <h3 class="cta-heading">Ready to Experience Pure Focus?</h3>
+      <p style="font-size:1.05rem; color:var(--text-secondary); max-width:540px; margin:0 auto 28px;">
+        Open LISSO now in your browser. No registration, no telemetry, no distractions.
+      </p>
+      <a href="app.html" class="btn-warm-primary" style="padding:13px 36px; font-size:0.95rem;">
+        <span>Launch Your Workspace</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Minimalist Warm Footer -->
+  <footer class="footer-section">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:10px;">
+      <svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor" style="color:var(--text-main);">
+        <path d="M50 10 C62 10 76 22 84 36 C74 40 62 43 53 45 C47 46 45 48 45 49 C45 41 42 26 38 16 C42 12 46 10 50 10 Z"/>
+        <path d="M90 50 C90 62 78 76 64 84 C60 74 57 62 55 53 C54 47 52 45 51 45 C59 45 74 42 84 38 C88 42 90 46 90 50 Z"/>
+        <path d="M50 90 C38 90 24 78 16 64 C26 60 38 57 47 55 C53 54 55 52 55 51 C55 59 58 74 62 84 C58 88 54 90 50 90 Z"/>
+        <path d="M10 50 C10 38 22 24 36 16 C40 26 43 38 45 47 C46 53 48 55 49 55 C41 55 26 58 16 62 C12 58 10 54 10 50 Z"/>
+      </svg>
+      <strong style="color:var(--text-main); font-family:var(--font-heading);">LISSO</strong>
+    </div>
+    <p style="margin-bottom:6px;">"Your workspace. Your productivity."</p>
+    <p>
+      Designed & Developed by <a href="https://thinksprint.in" target="_blank" rel="noopener noreferrer" class="studio-link">Think Sprint</a>.
+    </p>
+  </footer>
+
+  <!-- ==========================================================================
+       INTERACTIONS, CURSOR, 3D TILT & AUDIO DEMO
+       ========================================================================== -->
+  <script>
+    /* 01. Custom Dual Cursor & Ambient Light Following */
+    const cursorDot = document.getElementById('cursorDot');
+    const cursorFollower = document.getElementById('cursorFollower');
+    const ambientGlow = document.getElementById('ambientGlow');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let followerX = mouseX;
+    let followerY = mouseY;
+    let glowX = mouseX;
+    let glowY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (cursorDot) {
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      if (cursorDot) cursorDot.style.opacity = '0';
+      if (cursorFollower) cursorFollower.style.opacity = '0';
+      if (ambientGlow) ambientGlow.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      if (cursorDot) cursorDot.style.opacity = '1';
+      if (cursorFollower) cursorFollower.style.opacity = '0.55';
+      if (ambientGlow) ambientGlow.style.opacity = '0.65';
+    });
+
+    function animateCursorPhysics() {
+      followerX += (mouseX - followerX) * 0.22;
+      followerY += (mouseY - followerY) * 0.22;
+      if (cursorFollower) {
+        cursorFollower.style.left = `${followerX}px`;
+        cursorFollower.style.top = `${followerY}px`;
+      }
+
+      if (ambientGlow) {
+        glowX += (mouseX - glowX) * 0.08;
+        glowY += (mouseY - glowY) * 0.08;
+        ambientGlow.style.left = `${glowX}px`;
+        ambientGlow.style.top = `${glowY}px`;
+      }
+
+      requestAnimationFrame(animateCursorPhysics);
+    }
+    animateCursorPhysics();
+
+    // Hover scale effects on interactive elements
+    document.querySelectorAll('a, button, .aesthetic-tilt-card, .question-box').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    /* 02. 3D Perspective Tilt System */
+    document.addEventListener('mousemove', (e) => {
+      if (window.matchMedia('(hover: none)').matches) return;
+      
+      const cards = document.querySelectorAll('.aesthetic-tilt-card, .question-box');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (
+          e.clientX >= rect.left - 30 &&
+          e.clientX <= rect.right + 30 &&
+          e.clientY >= rect.top - 30 &&
+          e.clientY <= rect.bottom + 30
+        ) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -5;
+          const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 5;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(6px)`;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        }
+      });
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      const card = e.target.closest('.aesthetic-tilt-card, .question-box');
+      if (card && !card.contains(e.relatedTarget)) {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+      }
+    });
+
+    /* 03. Scroll-Driven Reveal Animations */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+    /* 04. Mini Audio Spectrum Visualizer Render Loop */
+    function renderWave(canvas, strokeColor) {
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = canvas.clientWidth * window.devicePixelRatio || 380;
+      canvas.height = canvas.clientHeight * window.devicePixelRatio || 75;
+
+      let offset = 0;
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.lineWidth = 2 * window.devicePixelRatio;
+        ctx.strokeStyle = strokeColor || '#6C5CE7';
+        ctx.beginPath();
+
+        const step = canvas.width / 50;
+        for (let x = 0; x <= canvas.width; x += step) {
+          const y = (canvas.height / 2) + Math.sin((x * 0.02) + offset) * (canvas.height * 0.25) * Math.cos(offset * 0.6);
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        offset += 0.035;
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    renderWave(document.getElementById('heroWaveCanvas'), '#6C5CE7');
+    renderWave(document.getElementById('experienceAudioCanvas'), '#D97742');
+
+    /* 05. Client-Side Web Audio API Ambient Rain Generator */
+    let audioCtx = null;
+    let isPlaying = false;
+    let rainSource = null;
+
+    function toggleAcousticDemo() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      const btnLabel = document.getElementById('audioDemoBtnLabel');
+
+      if (!isPlaying) {
+        const bufferSize = audioCtx.sampleRate * 2;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        let b0 = 0, b1 = 0, b2 = 0;
+
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          b0 = 0.99886 * b0 + white * 0.0555;
+          b1 = 0.99332 * b1 + white * 0.0750;
+          b2 = 0.96900 * b2 + white * 0.1538;
+          data[i] = (b0 + b1 + b2 + white * 0.53) * 0.07;
+        }
+
+        rainSource = audioCtx.createBufferSource();
+        rainSource.buffer = buffer;
+        rainSource.loop = true;
+
+        const band = audioCtx.createBiquadFilter();
+        band.type = 'bandpass';
+        band.frequency.value = 1150;
+        band.Q.value = 1.1;
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+
+        rainSource.connect(band);
+        band.connect(gain);
+        gain.connect(audioCtx.destination);
+        rainSource.start();
+
+        isPlaying = true;
+        if (btnLabel) btnLabel.innerText = '⏹ Stop Rain Synthesis';
+      } else {
+        if (rainSource) {
+          try { rainSource.stop(); } catch(e){}
+          rainSource = null;
+        }
+        isPlaying = false;
+        if (btnLabel) btnLabel.innerText = '▶ Listen to Generative Rain';
+      }
+    }
+  </script>
+</body>
+</html>
